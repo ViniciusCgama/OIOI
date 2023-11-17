@@ -1,6 +1,10 @@
 <h1 class="my-3 text-primary">
   Listar Produtos
-  <button type="button" routerLink="/produtos/cadastrar" class="btn btn-success mt-2 float-right">
+  <button
+    type="button"
+    routerLink="/produtos/cadastrar"
+    class="btn btn-success mt-2 float-right"
+  >
     Cadastrar
   </button>
 </h1>
@@ -17,11 +21,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngfor = 'let prod of listaProdutos'>
-        <td>1</td>
-        <td>Curso de Angular</td>
-        <td>31/12/2021</td>
-        <td>R$ 500,00</td>
+      <tr *ngfor="let produto of listaProdutos">
+        <td>{{produto.id}}</td>
+        <td>{{produto.nome}}</td>
+        <td>{{produto.validade}}</td>
+        <td>{{produto.preco}}</td>
         <td></td>
         <button class="btn btn-warning">
           <i class="fa fa-pencil" aria-hidden="true"></i>

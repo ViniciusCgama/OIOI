@@ -1,19 +1,36 @@
 <h1>Seja bem vindo ao curso de Angular!</h1>
 <h4 class="text-danger">{{ anuncio }}</h4>
-<div class="card" style="width: 18rem;">
-  <img [src]="foto" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">
-      {{ nomeProduto | uppercase }}
-      <span *ngIf="promocao; else elseBlock " class="badge badge-success">Promoção</span>
-      <ng-template #elseBlock>
-        <span class="badge badge-primary">Aproveite</span>
-      </ng-template>
-    </h5>
-    <p class="card-text">Identificação: {{ idProduto | number: '2.0-0' }} <br>
-      Validade: {{ dataValidade | date : "shortDate"}}
-    </p>
-    <a href="#" class="btn btn-primary float-right"> {{ precoProduto | currency:"BRL" }}</a>
-  </div>
-</div>
 
+<div class="row">
+  <div class="col">
+<app-card-produto
+[foto]="foto"
+[nomeProduto]="nomeProduto"
+[promocao]="promocao"
+[idProduto]="idProduto"
+[dataValidade]="dataValidade"
+[precoProduto]="precoProduto">
+</app-card-produto>
+</div>
+<div class="col">
+<app-card-produto
+  foto="https://conteudo.imguol.com.br/c/noticias/c5/2016/02/26/dragao-carrinho-compras-dinheiro-inflacao-1456524600237_v2_900x506.jpg"
+  nomeProduto="Tatuagem da karla"
+  [promocao] = "false"
+  [idProduto] =  12
+  dataValidade ="2020-12-30"
+  [precoProduto] =5000.0
+></app-card-produto>
+</div>
+<div class="col">
+  <app-card-produto
+    foto="https://ichef.bbci.co.uk/news/800/cpsprodpb/05ed/live/64e30140-3ce5-11ee-948b-798b8a1386cc.jpg"
+    nomeProduto="Cachorra da karla"
+    [promocao] = "false"
+    [idProduto] =  1
+    dataValidade ="2020-12-20"
+    [precoProduto] =10000000000000000000.0
+  ></app-card-produto>
+  </div>
+
+</div>
